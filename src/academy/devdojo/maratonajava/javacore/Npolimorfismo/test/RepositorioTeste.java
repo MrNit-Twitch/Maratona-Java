@@ -3,7 +3,7 @@ package academy.devdojo.maratonajava.javacore.Npolimorfismo.test;
 import academy.devdojo.maratonajava.javacore.Npolimorfismo.servico.RepositorioArquivo;
 import academy.devdojo.maratonajava.javacore.Npolimorfismo.servico.RepositorioBancoDeDados;
 import academy.devdojo.maratonajava.javacore.Npolimorfismo.servico.RepositorioMemoria;
-import academy.devdojo.maratonajava.javacore.repositorio.Repositorio;
+import academy.devdojo.maratonajava.javacore.Npolimorfismo.repositorio.Repositorio;
 
 public class RepositorioTeste {
     public static void main(String[] args) {
