@@ -3,31 +3,28 @@ package academy.devdojo.maratonajava.javacore.Uregex.test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PatternMatcherTest01 {
+public class PatternMatcherTest02 {
     public static void main(String[] args) {
-        String regex = "ab";
-        String text = "abaaba";
-        String regex2 = "aba";
-        String text2 = "abababa";
+        //\d = Localiza todos os digitos
+        //\D = Localiza todos os NÃO digitos
+        //\s = Localiza todos os espaços em branco considerando \t \n \f \r
+        //\S = Localiza todos os caracters excluindo os brancos
+        //\w = Localiza todos os Digitos e letras e _
+        //\W = Oposto do \w
+        String regex = "\\w";
+        String text = "hhj_212g\rvh!21kh2";
+
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
-        Pattern pattern2 = Pattern.compile(regex2);
-        Matcher matcher2 = pattern2.matcher(text2);
+
         System.out.println("texto 1:  " + text);
         System.out.println("Indice:   0123456789");
         System.out.println("regex 1:  " + regex);
-        System.out.println("texto 2:  " + text2);
-        System.out.println("Indice:   0123456789");
-        System.out.println("regex 2:  " + regex2);
+
         System.out.println("Posições encontradas");
         System.out.println("Texto 1 (ab):");
         while (matcher.find()){
             System.out.print(matcher.start() + " " + matcher.group() + "\n");
-        }
-        System.out.println();
-        System.out.println("Texto 2 (aba):");
-        while (matcher2.find()){
-            System.out.print(matcher2.start() + " " + matcher2.group() + "\n");
         }
     }
 }
