@@ -23,6 +23,15 @@ public class Smartphone {
         return serialNumber != null && serialNumber.equals(smartphone.serialNumber) && marca != null && marca.equals(smartphone.marca);
     }
 
+    // se x.equals(y)  == true, y.hashCode() == x.hashCode().
+    // se y.hashCode() == x.hashCode(), não necessariamento o equals de y.equals(x) tem que ser true.
+    // x.equals(y) == false
+    // y.hashCode() != x.hashCode(), x.equals(y) deverá ser diferente.
+    @Override
+    public int hashCode() {
+        return serialNumber == null ? 0 : this.serialNumber.hashCode();
+    }
+
     public String getSerialNumber() {
         return serialNumber;
     }
