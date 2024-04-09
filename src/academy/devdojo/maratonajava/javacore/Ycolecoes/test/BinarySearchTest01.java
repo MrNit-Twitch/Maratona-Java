@@ -4,18 +4,22 @@ import academy.devdojo.maratonajava.javacore.Ycolecoes.dominio.Manga;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-class MangaByIdComparator implements Comparator<Manga> {
-    @Override
-    public int compare(Manga manga1, Manga manga2) {
-        return manga1.getId().compareTo(manga2.getId());
-    }
-}
-
-public class MangaSortTest01 {
+public class BinarySearchTest01 {
     public static void main(String[] args) {
+        /*List <Integer> numeros = new ArrayList<>();
+        numeros.add(2);
+        numeros.add(0);
+        numeros.add(4);
+        numeros.add(3);
+        // (-(ponto de inserção) -1)
+        // index 0,1,2,3
+        // value 0,2,3,4
+        Collections.sort(numeros);
+        System.out.println(Collections.binarySearch(numeros, 5));
+        System.out.println(Collections.binarySearch(numeros, 0));*/
+
         List<Manga> mangas = new ArrayList<>();
         mangas.add(new Manga(5L, "Attack on titan", 19.9));
         mangas.add(new Manga(1L, "Berserk", 9.5));
@@ -23,22 +27,14 @@ public class MangaSortTest01 {
         mangas.add(new Manga(3L, "Pokemon", 11.20));
         mangas.add(new Manga(2L, "Dragon ball Z", 2.99));
 
-        for (Manga manga : mangas) {
-            System.out.println(manga);
-        }
-        System.out.println("____________________________");
-
         Collections.sort(mangas);
+
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
 
-        System.out.println("____________________________");
+        Manga mangaToSearch = new Manga(2L, "lragon ball Z", 2.99);
 
-        Collections.sort(mangas, new MangaByIdComparator()); //Ou no lugar desta linha...
-        //mangas.sort(new MangaByIdComparator());
-        for (Manga manga : mangas) {
-            System.out.println(manga);
-        }
+        System.out.println(Collections.binarySearch(mangas, mangaToSearch));
     }
 }
