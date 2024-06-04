@@ -18,14 +18,14 @@ public class ComportamentoPorParametroTest02 {
         System.out.println(greenCars);
         System.out.println(redCars);
         System.out.println(yearBeforeCars);
-        List<Integer> nums = List.of(1,2,3,4,5,6,7,8,9,10);
+        List<Integer> nums = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         System.out.println(filter(nums, num -> num % 2 == 0));
     }
 
-    private static <T> List<T> filter(List<T> list, Predicate<T> predicate){
+    private static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
         List<T> filteredList = new ArrayList<>();
-        for (T e : list){
-            if (predicate.test(e)){
+        for (T e : list) {
+            if (predicate.test(e)) {
                 filteredList.add(e);
             }
         }
