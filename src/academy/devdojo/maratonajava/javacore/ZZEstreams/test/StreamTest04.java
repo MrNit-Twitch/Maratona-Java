@@ -1,5 +1,7 @@
 package academy.devdojo.maratonajava.javacore.ZZEstreams.test;
 
+import academy.devdojo.maratonajava.javacore.ZZEstreams.dominio.LightNovels;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
