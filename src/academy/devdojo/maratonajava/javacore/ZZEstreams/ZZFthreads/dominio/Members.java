@@ -23,10 +23,10 @@ public class Members {
         this.emails.notifyAll();
     }
     public String retriveEmail() throws InterruptedException {
-        System.out.println(Thread.currentThread().getName() + " checking if thee are emails");
+        System.out.println(Thread.currentThread().getName() + " checking if there are emails");
         synchronized (this.emails){
             while(this.emails.size() == 0){
-                if (!open) break;
+                if (!open) return null;
                 System.out.println(Thread.currentThread().getName() + " Não tem email disponivel na lista, entrando em modod de espera.");
                 this.emails.wait();
             }
